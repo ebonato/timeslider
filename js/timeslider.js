@@ -182,7 +182,7 @@ if (typeof jQuery === 'undefined') {
     };
 
     TimeSlider.prototype.set_options = function (options) {
-        if (options.hours_per_ruler) {
+        if (options.hours_per_ruler || options.start_timestamp) {
             options = $.extend({}, this.options, options);
 
             // hours
@@ -193,6 +193,11 @@ if (typeof jQuery === 'undefined') {
                 this.add_graduations();
                 this.set_time_caret_position();
                 this.set_time_cells_position();
+            }
+			
+			// start_timestamp
+            if (options.start_timestamp != this.options.start_timestamp) {
+                this.set_ruler_position((this.options.start_timestamp - options.start_timestamp) * this.px_per_ms;
             }
         }
     };

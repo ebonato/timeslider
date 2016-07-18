@@ -194,10 +194,9 @@ if (typeof jQuery === 'undefined') {
                 this.set_time_caret_position();
                 this.set_time_cells_position();
             }
-			
-			// start_timestamp
+            // start_timestamp
             if (options.start_timestamp != this.options.start_timestamp) {
-                this.set_ruler_position((this.options.start_timestamp - options.start_timestamp) * this.px_per_ms;
+                this.set_ruler_position((this.options.start_timestamp - options.start_timestamp) * this.px_per_ms);
             }
         }
     };

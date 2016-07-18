@@ -46,7 +46,7 @@ if (typeof jQuery === 'undefined') {
     TimeSlider.DEFAULTS = {
         start_timestamp: (new Date()).getTime() + ((new Date()).getTimezoneOffset() * 60 * 1000 * -1),   // left border
         current_timestamp: (new Date()).getTime() + ((new Date()).getTimezoneOffset() * 60 * 1000 * -1), // current timestamp
-        hours_per_ruler: 24,                    // length of graduation ruler in hours (min 1, max 48)
+        hours_per_ruler: 24,                    // length of graduation ruler in hours (min 1, max 168)
         graduation_step: 20,                    // minimum pixels between graduations
         distance_between_gtitle: 80,            // minimum pixels between titles of graduations
         update_timestamp_interval: 1000,        // interval for updating current time
@@ -152,8 +152,8 @@ if (typeof jQuery === 'undefined') {
         if (options['hours_per_ruler'] < 1) {
             options['hours_per_ruler'] = 1;
         }
-        else if (options['hours_per_ruler'] > 48) {
-            options['hours_per_ruler'] = 48;
+        else if (options['hours_per_ruler'] > 168) {
+            options['hours_per_ruler'] = 168;
         }
 
         if (options['update_timestamp_interval'] < 1) {

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Timeslider : TimeSlider Plugin for jQuery">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Timeslider</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ebonato/timeslider">View on GitHub</a>
+
+          <h1 id="project_title">Timeslider</h1>
+          <h2 id="project_tagline">TimeSlider Plugin for jQuery</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ebonato/timeslider/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ebonato/timeslider/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="timeslider-plugin-for-jquery" class="anchor" href="#timeslider-plugin-for-jquery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TimeSlider Plugin for jQuery</h1>
+
+<hr>
+
+<h2>
+<a id="fork-objective" class="anchor" href="#fork-objective" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fork Objective</h2>
+
+<p>This fork is just a fix to handle event on_move_ruler_callback. We need to be able to change not only hours_per_ruler, but also start_timestamp. So moving one ruler, will move all rulers at same time.</p>
+
+<blockquote>
+<p>English description | <a href="README.ru.md">Описание на русском</a></p>
+</blockquote>
+
+<p>Lightweight and usable plugin for timeline management.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Any number of time cells at one page.</li>
+<li>Drag and drop</li>
+</ul>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://v-v-vishnevskiy.github.io/timeslider/demo/demo.html">Demo</a> page.</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li><a href="http://jquery.com/">jQuery 1.6.1+</a></li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>1. Load jQuery library</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>2. Load TimeSlider plugin's stylesheet and JavaScript</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/timeslider.css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/timeslider.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>3. Create an empty DIV element that will be served as the container for the plugin</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>ts<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>time-slider<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>4. Initialize the plugin and we're ready to go.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#ts<span class="pl-pds">'</span></span>).<span class="pl-en">TimeSlider</span>();</pre></div>
+
+<h3>
+<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Settings</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Default</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>start_timestamp</td>
+            <td>Current local time</td>
+            <td>Integer</td>
+            <td>Left border from which starts the ruler. Timestamp in milliseconds since January 1 1970.</td>
+        </tr>
+        <tr>
+            <td>current_timestamp</td>
+            <td>Current local time</td>
+            <td>Integer</td>
+            <td>Current time. Timestamp in milliseconds. Red vertical line.</td>
+        </tr>
+        <tr>
+            <td>hours_per_ruler</td>
+            <td>24</td>
+            <td>Float</td>
+            <td>Length of the ruler in hours. Min is 1, Max is 48.</td>
+        </tr>
+        <tr>
+            <td>graduation_step</td>
+            <td>20</td>
+            <td>Integer</td>
+            <td>Minimum pixels between graduations on the ruler. It can vary from 20 to 39. Calculated independently.</td>
+        </tr>
+        <tr>
+            <td>distance_between_gtitle</td>
+            <td>80</td>
+            <td>Integer</td>
+            <td>Minimum pixels between titles of graduations.</td>
+        </tr>
+        <tr>
+            <td>update_timestamp_interval</td>
+            <td>1000</td>
+            <td>Integer</td>
+            <td>Interval through which will update the current time. In milliseconds.</td>
+        </tr>
+        <tr>
+            <td>update_interval</td>
+            <td>1000</td>
+            <td>Integer</td>
+            <td>Interval through which will updates the graphical elements. In milliseconds.</td>
+        </tr>
+        <tr>
+            <td>show_ms</td>
+            <td>false</td>
+            <td>Boolean</td>
+            <td>Whether to show the milliseconds?</td>
+        </tr>
+        <tr>
+            <td>init_cells</td>
+            <td>null</td>
+            <td>Array|Function</td>
+            <td>Add time cells on initial. Can be list of time cells or a function with plugin context.</td>
+        </tr>
+        <tr>
+            <td>ruler_enable_move</td>
+            <td>true</td>
+            <td>Boolean</td>
+            <td>Enabling on move the ruler from UI.</td>
+        </tr>
+        <tr>
+            <td>timecell_enable_move</td>
+            <td>true</td>
+            <td>Boolean</td>
+            <td>Enabling on move time cells from UI.</td>
+        </tr>
+        <tr>
+            <td>timecell_enable_resize</td>
+            <td>true</td>
+            <td>Boolean</td>
+            <td>Enabling on resizing time cells from UI.</td>
+        </tr>
+        <tr>
+            <td>on_add_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td>Callback. Is called after add time cell. Callback has 3 parameters: <code>id</code> (id of time cell), <code>start</code> (the start point of time cell), <code>stop</code> (the end point of time cell, can be not set if time cell is not finished).</td>
+        </tr>
+        <tr>
+            <td>on_toggle_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_remove_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_remove_all_timecells_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_dblclick_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_move_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_resize_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_change_timecell_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_dblclick_ruler_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_move_ruler_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on_change_ruler_callback</td>
+            <td>null</td>
+            <td>Function</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+<a id="donations" class="anchor" href="#donations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Donations</h2>
+
+<ul>
+<li>PayPal: <a href="https://www.paypal.me/vishnevskiy">https://www.paypal.me/vishnevskiy</a>
+</li>
+<li>Yandex.Money: <a href="https://money.yandex.ru/to/410011466316463">https://money.yandex.ru/to/410011466316463</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Timeslider maintained by <a href="https://github.com/ebonato">ebonato</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

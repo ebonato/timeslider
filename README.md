@@ -1,6 +1,8 @@
 # TimeSlider Plugin for jQuery
 ---
 
+This fork is just a fix to handle event on_move_ruler_callback. We need to be able to change not only hours_per_ruler, but also start_timestamp. So moving one ruler, will move all rulers at same time.
+
 > English description | <a href="README.ru.md">Описание на русском</a>
 
 Lightweight and usable plugin for timeline management.
@@ -11,7 +13,7 @@ Lightweight and usable plugin for timeline management.
 * Drag and drop
 
 ## Demo
-[Demo](http://v-v-vishnevskiy.github.io/timeslider/demo/demo.html) page.
+[Demo](https://output.jsbin.com/wuyuyo) page.
 
 ## Dependencies
 

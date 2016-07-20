@@ -631,7 +631,7 @@ if (typeof jQuery === 'undefined') {
             style += 'width:' + width.toString() + 'px;';
             var timecell_style = this.set_style(timecell['style']);
             this.$ruler.append(
-                '<div id="'+ timecell['_id'] +'" class="timecell' + t_class + '" ' + start + ' ' + stop + ' style="' + style + timecell_style + '">' +
+                '<div id="'+ timecell['_id'] +'" class="timecell' + t_class + '" ' + start + ' ' + stop + ' style="' + style + timecell_style +'" title="' + timecell['title'] +'">' +
                     this.time_duration(
                         (timecell['stop'] ? (timecell['stop']) : this.options.current_timestamp) - (timecell['start'])
                     ) +

@@ -631,12 +631,12 @@ if (typeof jQuery === 'undefined') {
             style += 'width:' + width.toString() + 'px;';
             var timecell_style = this.set_style(timecell['style']);
             this.$ruler.append(
-                '<div id="'+ timecell['_id'] +'" class="timecell' + t_class + '" ' + start + ' ' + stop + ' style="' + style + timecell_style +'" title="' + timecell['title'] +'">' +
+                '<div id="'+ timecell['_id'] +'" class="timecell' + t_class + '" ' + start + ' ' + stop + ' style="' + style + timecell_style + '">' +
                     this.time_duration(
                         (timecell['stop'] ? (timecell['stop']) : this.options.current_timestamp) - (timecell['start'])
                     ) +
                 '</div>' +
-                '<div id="t' + timecell['_id'] + '" p_id="' + timecell['_id'] + '" class="timecell-event' + t_class + '" style="' + style + '"></div>'
+                '<div id="t' + timecell['_id'] + '" p_id="' + timecell['_id'] + '" class="timecell-event' + t_class + '" style="' + style +'" title="' + timecell['title'] + '"></div>'
             );
             this.$prompts.append(
                 '<div id="l-prompt-' + timecell['_id'] + '" class="prompt" style="top:9px;left:' + (left - 44).toString() + 'px;">' +
